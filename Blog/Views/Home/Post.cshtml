@@ -1,0 +1,71 @@
+﻿@model Post
+
+@{
+    ViewBag.Title = Model.Title;
+    ViewBag.Description = Model.Description;
+    ViewBag.Keywords = $"{Model.Tags?.Replace(",", " ")} {Model.Category}";
+
+    var base_path = Context.Request.PathBase;
+}
+
+@*<h2>@Model.Title</h2>
+
+    @if (!String.IsNullOrEmpty(Model.Image))
+    {
+        var image_path = $"/Image/{Model.Image}";
+        <img src="@image_path" width="500" />
+    }
+
+    <p>@Model.Body</p>*@
+
+<div class="container container-post-view-page container-with-margin-top-bottom-20 border-all-corners-radius-five row">
+
+    <div class="post-view-page no-shadow">
+        @if (!String.IsNullOrEmpty(Model.Image))
+        {
+            var image_path = $"{base_path}/Image/{Model.Image}";
+            <img class="border-top-right-and-left-radius-five" src="@image_path" />
+            <span class="post-list-item-title post-view-page-title-top-em">@Model.Title</span>
+        }
+    </div>
+    <div class="post-body border-bottom-right-and-left-radius-five">
+        @if (User.Identity.IsAuthenticated)
+        {
+            <div class="col s12 m12 l12">
+                <a style="color:dodgerblue" asp-controller="Panel" asp-action="Edit" asp-route-id="@Model.Id">
+                    Edit
+                </a>
+            </div>
+        }
+        <div class="col s12 m12 l12">
+            @Html.Raw(Model.Body)
+        </div>
+    </div>
+
+    <div class="comment-section row">
+        @{
+            await Html.RenderPartialAsync("_MainComment", new CommentViewModel { PostId = Model.Id, MainCommentId = 0, });
+        }
+        @foreach (var c in Model.MainComments)
+        {
+            <div class="col s12 m12 l12">
+                <p>
+                    @c.Message --- @c.Created
+                </p>
+            </div>
+
+            <div class="tabbed-sub-comment">
+                
+                @{
+                    await Html.RenderPartialAsync("_SubComment", new CommentViewModel { PostId = Model.Id, MainCommentId = c.Id });
+                }
+                @foreach (var sc in c.SubComments)
+                {
+                    <div class="col s12 m12 l12">
+                        <p>@sc.Message --- @sc.Created</p>
+                    </div>
+                }
+            </div>
+        }
+    </div>
+</div>

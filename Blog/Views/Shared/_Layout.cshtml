@@ -1,0 +1,148 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-JKLW6HNMWW"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-JKLW6HNMWW');
+    </script>
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href="~/content/Logo/feed your agency_initials.png">
+
+    <title>@ViewBag.Title</title>
+    <meta name="description" content="@ViewBag.Description" />
+    <meta name="keywords" content="@ViewBag.Keywords" />
+
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="~/css/materialize.min.css" rel="stylesheet" />
+
+    <environment include="Development">
+        <link href="~/css/site.css" rel="stylesheet" />
+    </environment>
+    <environment include="Production">
+        @*<link href="~/css/site.min.css" rel="stylesheet" />*@
+        <link href="~/css/site.css" rel="stylesheet" />
+
+    </environment>
+
+</head>
+<body class="light-grey-apple">
+    <div>
+        <div class="nav-fixed">
+
+            <nav class="light-blue-custom">
+                <div class="nav-wrapper">
+                    <div class="col s12">
+                        <a asp-controller="Home" asp-action="Index" class="brand-logo nav_fyalogo_initials">
+                            <div class="nav_fyalogo_initials">
+                                <img src="~/content/Logo/feed your agency_initials.png" />
+                            </div>
+                        </a>
+                        <!--To always show burger menu, add class 'show-on-large' to the <a> element below-->
+                        <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+                        <ul class="right hide-on-med-and-down">
+                            @if (User.Identity.IsAuthenticated)
+                            {
+                                <li><a asp-controller="Home" asp-action="Index"><img src="~/content/static/mountain.jpg" /></a></li>
+                                <li><a asp-controller="Panel" asp-action="Edit">Create Post</a></li>
+                                <li><a asp-controller="Auth" asp-action="Logout">Log Out</a></li>
+                            }
+                            else
+                            {
+                                <li>@*<a asp-controller="Auth" asp-action="Login">Sign In</a>*@</li>
+                                <li><a href="#jobs">Jobs</a></li>
+                                <li><a href="#footer">About</a></li>
+                                <li><a href="#footer">Contact</a></li>
+                            }
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+
+            <ul class="sidenav light-blue-custom white-text" id="mobile-demo">
+                @if (User.Identity.IsAuthenticated)
+                {
+                    <li><a asp-controller="Home" asp-action="Index">Home</a></li>
+                    <li><a asp-controller="Panel" asp-action="Edit">Create Post</a></li>
+                    <li><a asp-controller="Auth" asp-action="Logout">Log Out</a></li>
+                }
+                else
+                {
+                    <li><a asp-controller="Home" asp-action="Index" class="brand-logo">Home</a></li>
+                    <li>@*<a asp-controller="Auth" asp-action="Login">Sign In</a>*@</li>
+                    <li><a href="#jobs">Jobs</a></li>
+                    <li><a href="#footer">About</a></li>
+                    <li><a href="#footer">Contact</a></li>
+                }
+            </ul>
+        </div>
+
+
+    </div>
+    <div>
+        @RenderBody()
+    </div>
+
+    @********************************************************************************************************************@
+    <footer class="page-footer light-blue-custom" id="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col l6 s12">
+                    <h5 class="white-text">About</h5>
+                    <p class="white-text">
+                        We are specialists in sourcing the best React Software Developers and our recruiters have technology expertise. Recruiting at all levels.
+                        Get in touch now!
+                    </p>
+
+                    <h5 class="white-text">Contact</h5>
+                    <ul>
+                        <li><a class="white-text" href="info@feedyouragency.com" onclick="return false;">info@feedyouragency.com</a></li>
+                    </ul>
+                </div>
+                <div class="col l4 offset-l2 s12">
+                    <h5 class="white-text">Follow</h5>
+                    <ul>
+                        <li><a class="white-text" href="https://www.linkedin.com/company/feed-your-agency">LinkedIn</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer-copyright">
+            <div class="container">
+                Feed Your Agency - Copyright © 2020
+            </div>
+        </div>
+    </footer>
+    @********************************************************************************************************************@
+
+    @RenderSection("scripts", false)
+    <!--JavaScript at end of body for optimized loading-->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript" src="~/Scripts/materialize.min.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            $('.sidenav').sidenav();
+
+            $('.tooltipped').tooltip();
+
+            var options = {
+                margin: -110,
+                outDuration: 100,
+                inDuration: 100
+            };
+
+            $('.tooltipped').tooltip(options);
+        });
+
+    </script>
+</body>
+</html>

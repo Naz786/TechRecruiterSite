@@ -1,0 +1,263 @@
+﻿body {
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+}
+
+a {
+    font-family: 'Montserrat', sans-serif;
+}
+/***************************** Navbars*/
+.light-blue-custom {
+    background-color: #05DCFC !important;
+}
+
+.sidenav li a {
+    color: white;
+}
+
+.sidenav .divider {
+    margin: 8px 0 0 0;
+}
+
+.nav-fixed nav .nav-wrapper div a:nth-child(1) {
+    margin-left: 0px;
+}
+
+.nav-fixed nav .nav-wrapper div li a:last-child {
+    margin-right: 20px;
+}
+
+.nav_fyalogo_initials img {
+    max-width: 50px;
+}
+
+/*********************************** Common*/
+.border-all-corners-radius-five {
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.border-top-right-and-left-radius-five {
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+/*********************************** Colors */
+
+.light-blue-lighten-3-color {
+    background-color: #81d4fa;
+}
+
+.light-grey-apple {
+    background-color: #ffffff;
+}
+
+.container-with-margin-top-bottom-20 {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.container-post-view-page {
+    background: white;
+    padding-bottom: 10px
+}
+
+/* label underline focus color */
+input[type=text]:not(.browser-default):focus:not([readonly]) {
+    border-bottom: 1px solid #81d4fa;
+    box-shadow: 0 1px 0 #81d4fa;    
+}
+
+/***************************** Home/Index */
+.main-img {
+    position: relative;
+    height: 100px;
+    background-image: url('../content/Logo/LinkedIn_2_mobile.png');
+    background-position: center;
+    background-size: cover;
+    margin-top: 10px;
+}
+
+.card .card-image img {
+    min-height: 157px;
+    object-fit: cover;
+}
+
+.max-height-157px {
+    max-height: 157px;
+}
+
+.main-believe-it-heading{
+    text-align: center;
+    font-size: 3em;
+    position: relative;
+    top: 35%;
+    font-style: normal;
+    color: white;
+    font-weight: 800;
+}
+
+img {
+    width: 100%;
+}
+
+.pagination {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.perfect-for-paragraph, .description-paragraph {
+    text-align: left;
+}
+    .perfect-for-paragraph p:nth-child(1), .description-paragraph .section-title, .section-title {
+        font-weight: 700;
+        font-size: 1.2em;
+    }
+
+.description-paragraph .dp-custom-padding {
+    padding: 5px;
+}
+
+/***************************** Post/Index*/
+.post-list-item {
+    padding: 0 0 !important;
+}
+
+.post-list-item-title {
+    position: absolute;
+    color: white;
+    font-size: 2em;
+    left: 50%;
+    transform: translateX(-50%);
+    text-shadow: 0 0 8px black;
+    z-index: 1;
+    width: fit-content;
+    text-align: center;
+    padding: 30px 20px 20px 20px;
+}
+
+.post-index-page-title-top-em {
+    top: 0.3em;
+}
+
+.post-body {
+    background-color: white;
+}
+
+/***************************** Post/Index/[post_id]****/
+.post-view-page img {
+    object-fit: cover;
+    max-height: 250px;
+}
+
+.post-view-page-title-top-em {
+    top: 5em;
+}
+
+/***************************** Post/Index***Comment Section*/
+.tabbed-sub-comment {
+    margin-left: 10%;
+}
+
+@media only screen and (max-width: 320px) {
+    .main-believe-it-heading {
+        top: 23%;
+    }
+    .post-view-page-title-top-em{
+        top: 3.5em;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+
+}
+
+@media only screen and (max-width: 620px) {
+   
+}
+
+@media only screen and (max-width: 992px) {
+    .nav-fixed nav .nav-wrapper div a:nth-child(2) {
+        margin-left: 20px;
+    }
+}
+
+@media only screen and (min-width: 993px) {
+    .nav-fixed nav .nav-wrapper div a:nth-child(1) {
+        margin-left: 20px;
+    }
+}
+
+/* smartphones, portrait iPhone, 
+    portrait 480x320 phones (Android) */
+@media (min-width:320px) {
+    .main-img {
+        height: 100px;
+    }
+}
+
+@media (min-width:420px) {
+    .programmer-image img, .react_logo-image img {
+        max-width: 400px;
+        padding-bottom: 40px;
+    }
+}
+
+/* smartphones, Android phones, 
+    landscape iPhone */
+@media (min-width:480px) {
+    .main-img {
+        height: 150px;
+    }
+}
+
+/* portrait tablets, portrait iPad, 
+    e-readers (Nook/Kindle), 
+    landscape 800x480 phones (Android) */
+@media (min-width:600px) {
+    .main-img {
+        height: 150px;
+    }
+
+}
+
+/*screen below 600 inclusive*/
+@media (max-width:600px) {
+    .nav_fyalogo_initials {
+        padding-top: 3px;
+    }
+}
+
+@media (min-width:601px) {
+    .nav_fyalogo_initials {
+        padding-top: 7px;
+    }
+}
+
+/* tablet, landscape iPad, 
+    lo-res laptops ands desktops */
+@media (min-width:801px) {
+    .main-img {
+        height: 200px;
+        background-image: url('../content/Logo/LinkedIn_2.png');
+    }
+}
+
+@media (min-width:993px) {
+
+}
+
+/* big landscape tablets, 
+    laptops, and desktops */
+@media (min-width:1025px) { 
+
+}
+
+/* hi-res laptops and desktops */
+@media (min-width:1281px) { 
+
+}
+

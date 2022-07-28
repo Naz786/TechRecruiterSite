@@ -1,0 +1,150 @@
+﻿@model IndexViewModel
+
+@{
+    ViewBag.Title = "Feed Your Agency";
+    ViewBag.Description = "Technology Expertise-Led Sourcing - Specialising In Full Stack Developer Jobs At All Levels | Experts in Sourcing the Best React, JavaScript, ASP.NET and C# Developers.";
+    ViewBag.Keywords = "technology recruitment IT tech jobs react javascript ASP.NET MVC .NET C# software developers  junior developer";
+
+    var base_path = Context.Request.PathBase;
+
+}
+
+@*<h2>Home Page</h2>
+    <img src="~/content/static/ms22bo-title-page.jpg" width="500"/>*@
+
+<div class="row container ">
+    <div class="col s12 m12 l12 main-img"></div>
+</div>
+
+<div class="row container">
+    <div class="col s12 m6 l6 description-paragraph">
+        <div class="row">
+            <div class="dp-custom-padding section-title">Technology Expertise</div>
+
+            <div class="col s12 m12 l12 dp-custom-padding">
+                It's time to make your resource and ad-budget count, scale your business and blow up your value.
+            </div>
+            <div class="col s12 m12 l12 dp-custom-padding">
+                Recruiters that understand technology and follow the latest technology trends are what sets them apart from typical recruiters who struggle grasping all the different technology skills.
+            </div>
+            <div class="col s12 m12 l12 dp-custom-padding">
+                Our recruitment is based on real practical technology expertise in full-stack development - specialising in JavaScript, React, ASP.NET and C#.
+            </div>
+        </div>
+    </div>
+
+    <div class="col s12 m6 l6 center-align programmer-image">
+        <img src="~/content/Logo/1200x630-programmers-day.jpg" />
+    </div>
+</div>
+
+<div class="row col s12 container">
+
+    <div class="row ">
+
+        @*@foreach (var post in Model.Posts)
+        {
+            var image_path = $"{base_path}/Image/{post.Image}";
+            <div class="post-list-item-card col s12 m4 l4">
+                <a class="" asp-controller="Home" asp-action="Post" asp-route-id="@post.Id">
+                    <ul class="card">
+                        <li class="card-image post post-list-item">
+                            <span class="post-list-item-title post-index-page-title-top-em">@post.Title</span>
+                            <img class="max-height-157px" src="@image_path" />
+                        </li>
+                    </ul>
+                </a>
+            </div>
+        }
+
+        <div class="row col s12 m12 l12 pagination">
+            @if (Model.PageNumber > 1)
+            {
+                <a asp-action="Index" asp-controller="Home" asp-route-pageNumber="@(Model.PageNumber - 1)">Previous</a>
+
+            }
+            @if (Model.NextPage)
+            {
+                <a asp-action="Index" asp-controller="Home" asp-route-pageNumber="@(Model.PageNumber + 1)">Next</a>
+            }
+
+        </div>*@
+
+        <div id="jobs" class="col s12 m12 l12 section-title">
+            Live Vacancies:
+        </div>
+
+        @************JOBS****************************************************************************************************@
+        <div class="col s6 m6 l4">
+            <div class="card">
+                <div class="card-image">
+                    <img class="tooltipped" alt="001 aylesbury buckinghamshire full stack developer ios android node react" 
+                         src="~/images/Jobs/Full Stack/001.png" data-position="bottom" data-tooltip="JOB ID: #001" />
+                </div>
+            </div>
+        </div>
+
+        <div class="col s6 m6 l4">
+            <div class="card">
+                <div class="card-image">
+                    <img class="tooltipped" alt="002 milton keynes buckinghamshire junior full stack developer asp.net c# javascript react" 
+                         src="~/images/Jobs/Full Stack/002.png" data-position="bottom" data-tooltip="JOB ID: #002" />
+                </div>
+            </div>
+        </div>
+
+        @********************************************************************************************************************@
+
+    </div>
+</div>
+
+<div class="row col s12 container">
+    <div class="col s12 m4 l4">
+        <div class="card-panel light-blue-custom">
+            <span class="card-title">How to Apply to a Job</span>
+            <div class="white-text">
+                Send your CV to our email with the JOB ID in the subject.
+            </div>
+        </div>
+    </div>
+
+</div>  
+
+<div class="row container col s12 center-align">
+    <div class="col s12 m6 l6 perfect-for-paragraph">
+        <p>We're Perfect For...</p>
+        <div class="row">
+            <div class="col s2 m2 l2"><i class="material-icons">radio_button_checked</i></div>
+            <div class="col s10 m10 l10">
+                Companies looking for Full Stack Developers (that's our specialism).
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col s2 m2 l2"><i class="material-icons">radio_button_checked</i></div>
+            <div class="col s10 m10 l10">
+                Companies looking for Full Stack Developers at All Levels from Junior to Senior and beyond (we focus on the Vertical Market).
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col s2 m2 l2"><i class="material-icons">radio_button_checked</i></div>
+            <div class="col s10 m10 l10">
+                Companies looking for technology expertise-led recruiters (our recruiters are former developers, oh yes).
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col s2 m2 l2"><i class="material-icons">radio_button_checked</i></div>
+            <div class="col s10 m10 l10">
+                Companies looking for fast yet high quality hires (we're all about quality).
+            </div>
+        </div>
+
+    </div>
+
+    <div class="col s12 m6 l6 react_logo-image">
+        <img src="~/content/Logo/react.png" />
+    </div>
+</div>
+
